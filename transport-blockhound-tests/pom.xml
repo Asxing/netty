@@ -20,7 +20,7 @@
   <parent>
     <groupId>io.netty</groupId>
     <artifactId>netty-parent</artifactId>
-    <version>4.1.57.Final-SNAPSHOT</version>
+    <version>4.1.67.Final-SNAPSHOT</version>
   </parent>
 
   <artifactId>netty-transport-blockhound-tests</artifactId>
@@ -76,6 +76,8 @@
     <!-- Needed for SelfSignedCertificate -->
     <argLine.java9.extras>--add-exports java.base/sun.security.x509=ALL-UNNAMED</argLine.java9.extras>
     <skipJapicmp>true</skipJapicmp>
+    <!-- Do not deploy this module -->
+    <skipDeploy>true</skipDeploy>
   </properties>
 
   <dependencies>
@@ -87,6 +89,11 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>netty-handler</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>netty-resolver-dns</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
